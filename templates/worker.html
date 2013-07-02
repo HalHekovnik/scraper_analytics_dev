@@ -1,0 +1,20 @@
+<html>
+<head>
+</head>
+<body>
+
+<form action = "" method = "post">
+{% csrf_token %}
+<select name = "worker">
+<option value = 0>All Workers</option>
+{% for worker in workers %}
+	<option value = "{{worker.id}}">{{worker.name}}</option>
+{% endfor %}
+</select>
+<input type = "text" name = "start">
+<input type = "text" name = "stop">
+<input type = "submit" value = "Submit">
+</form>
+
+</body>
+</html>

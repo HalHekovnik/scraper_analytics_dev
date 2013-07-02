@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+<body>
+<form action = "" method = "post">
+{% csrf_token %}
+Worker: <select name = "worker">
+<option value = 0>All Workers</option>
+{% for worker in workers %}
+
+	<option value = "{{worker.id}}">{{worker.name}}</option>
+
+{% endfor %}
+</select>
+{% for category in categories %}
+
+	<input type = "checkbox" value = "{{category}}" name = "{{category}}"><label for = "{{category}}">{{category}}</label><br>
+
+{% endfor %}
+
+<input type = "text" name = "start">
+<input type = "text" name = "stop">
+<input type = "submit" value = "Submit">
+</form>
+</body>
+</html>
